@@ -1,0 +1,24 @@
+version: '3.9'
+
+services:
+  web:
+    build:
+      context: ./web
+    networks:
+      - onion
+
+  tor:
+    image: ghcr.io/hundehausen/tor-hidden-service:latest
+    container_name: tor-hidden-service
+    command: ["tor", "-f", "/etc/tor/mytorrc"]
+    volumes:
+      - ./tor/torrc:/etc/tor/mytorrc:ro
+      - ./tor/hidden_service:/var/lib/tor/hidden_service
+    networks:
+      - onion
+    depends_on:
+      - web
+
+networks:
+  onion:
+    driver: bridge
