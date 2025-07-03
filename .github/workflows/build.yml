@@ -1,0 +1,44 @@
+name: Build and Push Docker Image
+
+on:
+  push:
+    branches:
+      - main 
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+
+      - name: Read version from web/config.toml
+        id: version
+        run: |
+          VERSION=$(grep -E '^\s*version\s*=' web/config.toml | sed -E 's/.*=\s*"([^"]+)"/\1/')
+          echo "Version is $VERSION"
+          echo "VERSION=$VERSION" >> $GITHUB_OUTPUT
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Log in to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build and Push Docker Image
+        uses: docker/build-push-action@v5
+        with:
+          context: ./web             # <-- wichtig: Verzeichnis mit Dockerfile und Hugo-Seite
+          # file: ./web/Dockerfile 
+          push: true
+          tags: |
+            ghcr.io/${{ github.repository_owner }}/my.blog:latest
+            ghcr.io/${{ github.repository_owner }}/my.blog:${{ steps.version.outputs.VERSION }}

@@ -3,6 +3,9 @@ languageCode = "en-us"
 title = "PGE Solutions"
 theme = "ananke"
 
+[params]
+  version = "1.0.0"
+
 [menu]
   [[menu.main]]
     name = "Blog"
