@@ -33,6 +33,13 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Convert repository_owner to lowercase
+        id: repo
+        run: |
+          OWNER_LC=$(echo "${{ github.repository_owner }}" | tr '[:upper:]' '[:lower:]')
+          echo "lowercase repository_owner: $OWNER_LC"
+          echo "owner=$OWNER_LC" >> $GITHUB_OUTPUT
+
       - name: Build and Push Docker Image
         uses: docker/build-push-action@v5
         with:
@@ -40,5 +47,5 @@ jobs:
           # file: ./web/Dockerfile 
           push: true
           tags: |
-            ghcr.io/${{ github.repository_owner }}/my.blog:latest
-            ghcr.io/${{ github.repository_owner }}/my.blog:${{ steps.version.outputs.VERSION }}
+            ghcr.io/${{ steps.repo.outputs.owner }}/my.blog:latest
+            ghcr.io/${{ steps.repo.outputs.owner }}/my.blog:${{ steps.version.outputs.VERSION }}
