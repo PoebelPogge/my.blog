@@ -1,6 +1,6 @@
 ---
 title: "Journey to Dresden"
-date: 2025-23-07
+date: 2025-07-23
 draft: false
 ---
 
