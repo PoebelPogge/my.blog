@@ -1,10 +1,10 @@
 baseURL = "http://example.org/"
 languageCode = "en-us"
-title = "PGE Solutions"
+title = "PGE Stuff"
 theme = "ananke"
 
 [params]
-  version = "1.0.0"
+  version = "1.0.1"
 
 [menu]
   [[menu.main]]
