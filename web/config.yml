@@ -1,4 +1,4 @@
-baseURL: "https://examplesite.com/"
+#baseURL: "https://examplesite.com/"
 title: PGE Stuff
 theme: PaperMod
 
@@ -14,7 +14,7 @@ minify:
 pagination:
   pagerSize: 5
 
-version: 1.0.8
+version: 1.0.9
 
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
