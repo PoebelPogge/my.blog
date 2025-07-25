@@ -7,8 +7,6 @@ WORKDIR /src
 # Projektdateien in den Container kopieren
 COPY . .
 
-RUN git clone https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke
-
 # Hugo Module Abhängigkeiten auflösen
 RUN hugo mod tidy
 
