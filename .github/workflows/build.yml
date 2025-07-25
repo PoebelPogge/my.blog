@@ -13,8 +13,11 @@ jobs:
       packages: write
 
     steps:
-      - name: Checkout Repo
+      - name: Checkout Repo with Submodules
         uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          fetch-depth: 0
 
       - name: Read version from web/config.toml
         id: version
