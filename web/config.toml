@@ -4,7 +4,7 @@ title = "PGE Stuff"
 theme = "PaperMod"
 
 [params]
-  version = "1.0.1"
+  version = "1.0.2"
 
 [menu]
   [[menu.main]]
