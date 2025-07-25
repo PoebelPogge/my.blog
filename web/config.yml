@@ -14,7 +14,7 @@ minify:
 pagination:
   pagerSize: 5
 
-version: "1.0.7"
+version: 1.0.8
 
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
