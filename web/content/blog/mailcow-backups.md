@@ -2,8 +2,42 @@
 title: "New big love! mailcow: dockerized… but Backups?"
 date: 2025-06-26
 draft: false
-source: "https://pge.solutions/selfhosted/new-big-love-mailcow-dockerized-but-backups/"
+# weight: 1
+# aliases: ["/first"]
+tags: ["self hosted"]
+author: "PoebelPogge"
+# author: ["Me", "You"] # multiple authors
+showToc: true
+TocOpen: false
+draft: false
+hidemeta: false
+comments: false
+# description: "Desc Text."
+canonicalURL: "https://canonical.url/to/page"
+disableHLJS: true # to disable highlightjs
+disableShare: false
+disableHLJS: false
+hideSummary: false
+searchHidden: true
+ShowReadingTime: true
+ShowBreadCrumbs: true
+ShowPostNavLinks: true
+ShowWordCount: true
+ShowRssButtonInSectionTermList: true
+ShowCodeCopyButtons: true
+UseHugoToc: true
+#cover:
+#    image: "<image path/url>" # image path/url
+#    alt: "<alt text>" # alt text
+#    caption: "<text>" # display caption under cover
+#    relative: false # when using page bundles set this to true
+#    hidden: true # only hide on current single page
+#editPost:
+#    URL: "https://github.com/<path_to_repo>/content"
+#    Text: "Suggest Changes" # edit text
+#    appendFilePath: true # to append file path to Edit link
 ---
+
 
 Okay, I know, its been a while since I texted here some stuff, and yeah, you are right I’ve never been that active here. But honestly I’m really willing to be more active.  
 It’s not that I’m not doing fancy IT stuff in my free time, but that the point!  

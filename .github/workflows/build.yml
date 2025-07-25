@@ -22,7 +22,7 @@ jobs:
       - name: Read version from web/config.toml
         id: version
         run: |
-          VERSION=$(grep -E '^\s*version\s*=' web/config.toml | sed -E 's/.*=\s*"([^"]+)"/\1/')
+          VERSION=$(grep -E '^\s*version\s*:' web/config.yml | sed -E 's/.*=\s*"([^"]+)"/\1/')
           echo "Version is $VERSION"
           echo "VERSION=$VERSION" >> $GITHUB_OUTPUT
 
