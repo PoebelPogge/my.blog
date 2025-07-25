@@ -1,6 +1,5 @@
 .git
 node_modules
-public
 resources
 .DS_Store
 *.toml~
